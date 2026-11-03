@@ -1,0 +1,160 @@
+.process {
+  background: var(--white);
+}
+
+/* Horizontal timeline: one continuous rail, a node per step, content left-aligned below */
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  margin-top: clamp(56px, 6vw, 88px);
+  padding-top: 7px;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--steel-light);
+}
+
+.step {
+  position: relative;
+}
+
+.node {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--navy-900);
+  background: var(--white);
+  transition:
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.step:first-child .node,
+.step:hover .node {
+  border-color: var(--orange);
+  background: var(--orange);
+}
+
+.no {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 28px;
+  font-size: clamp(2.5rem, 2rem + 1.2vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--navy-900);
+}
+
+.stepWord {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--orange-ink);
+}
+
+.body {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.en {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--text-sub);
+}
+
+.title {
+  margin-top: 6px;
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--navy-900);
+}
+
+.text {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: var(--text-sub);
+}
+
+/* Vertical timeline on tablet and mobile */
+@media (max-width: 1023px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 560px;
+    margin-inline: auto;
+    padding-top: 0;
+  }
+
+  .steps::before {
+    top: 8px;
+    bottom: 8px;
+    left: 6px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 14px 72px 1fr;
+    column-gap: 20px;
+    padding-bottom: 36px;
+  }
+
+  .step:last-child {
+    padding-bottom: 0;
+  }
+
+  .node {
+    margin-top: 4px;
+  }
+
+  .no {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 0;
+    font-size: 2.25rem;
+  }
+
+  .stepWord {
+    order: -1;
+    font-size: 0.8125rem;
+  }
+
+  .body {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .step {
+    grid-template-columns: 14px 56px 1fr;
+    column-gap: 16px;
+  }
+
+  .no {
+    font-size: 1.875rem;
+  }
+}

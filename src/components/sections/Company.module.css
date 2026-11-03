@@ -1,0 +1,154 @@
+.company {
+  background: var(--off-white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 0.9fr);
+  gap: clamp(48px, 7vw, 120px);
+  align-items: center;
+}
+
+.body {
+  margin-top: 40px;
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+  color: var(--text-sub);
+}
+
+.body p + p {
+  margin-top: 16px;
+}
+
+.body p:first-child {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.media {
+  position: relative;
+  margin: 0 24px 24px 0;
+}
+
+.media::before {
+  content: '';
+  position: absolute;
+  inset: 24px -24px -24px 24px;
+  border: 1px solid var(--steel);
+  z-index: 0;
+}
+
+.media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  padding: 14px 20px;
+  background: var(--navy-900);
+  color: var(--white);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+}
+
+.caption::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 12px;
+  background: var(--orange);
+  vertical-align: 1px;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: clamp(72px, 8vw, 120px);
+  border-top: 1px solid var(--navy-900);
+}
+
+.value {
+  padding: 36px 32px 8px 0;
+}
+
+.value + .value {
+  padding-left: 32px;
+  border-left: 1px solid var(--line);
+}
+
+.no {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--orange-ink);
+}
+
+.valueTitle {
+  margin-top: 24px;
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.valueEn {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--text-sub);
+}
+
+.valueText {
+  margin-top: 12px;
+  color: var(--text-sub);
+}
+
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media {
+    max-width: 560px;
+  }
+
+  .media img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .values {
+    grid-template-columns: 1fr;
+  }
+
+  .value,
+  .value + .value {
+    padding: 28px 0;
+    border-left: 0;
+  }
+
+  .value + .value {
+    border-top: 1px solid var(--line);
+  }
+
+  .media {
+    margin: 0 16px 16px 0;
+  }
+
+  .media::before {
+    inset: 16px -16px -16px 16px;
+  }
+}

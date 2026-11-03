@@ -1,0 +1,55 @@
+:root {
+  /* Brand palette */
+  --navy-950: #0f1a21;
+  --navy-900: #172630;
+  --navy-700: #243744;
+  --navy-600: #2e4554;
+  --steel: #7e8b94;
+  --steel-light: #dce2e5;
+  --off-white: #f4f5f3;
+  --white: #ffffff;
+  /* Safety Orange for lines, marks and accents on dark backgrounds.
+     --orange-ink is the same hue darkened to reach WCAG AA (4.5:1) with white text
+     on filled buttons, and for small orange text on light backgrounds. */
+  --orange: #e87535;
+  --orange-ink: #c0531b;
+  --orange-ink-hover: #a94816;
+
+  /* Text — sub text darkened from #697780 so it passes AA on off-white and light steel */
+  --text: #202a30;
+  --text-sub: #56636b;
+  --text-on-dark: #ffffff;
+  --text-on-dark-sub: #b9c3c9;
+
+  /* Lines */
+  --line: #d5dbde;
+  --line-dark: rgba(220, 226, 229, 0.14);
+
+  /* Type */
+  --font-ko: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-en: 'Inter', var(--font-ko);
+
+  --fs-display: clamp(2.375rem, 1.4rem + 4.2vw, 4.5rem);
+  --fs-h2: clamp(1.875rem, 1.3rem + 2.2vw, 3rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-label: 0.875rem;
+
+  /* Layout */
+  --container: 1280px;
+  --gutter: 24px;
+  --section-y: clamp(88px, 6rem + 4vw, 160px);
+  --header-h: 80px;
+  --radius: 3px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --gutter: 16px;
+    --fs-body: 1rem;
+    --header-h: 64px;
+  }
+}
