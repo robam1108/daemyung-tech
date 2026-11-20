@@ -9,13 +9,6 @@
 
 **🔗 Live Demo — https://daemyung-tech.vercel.app/**
 
-<!-- 스크린샷 추가 예정: docs/ 폴더에 캡처 이미지를 넣으면 아래에 표시됩니다 -->
-<p align="center">
-  <img src="docs/screenshot-desktop.png" alt="데스크톱 화면" width="72%" />
-  &nbsp;
-  <img src="docs/screenshot-mobile.png" alt="모바일 화면" width="22%" />
-</p>
-
 <br />
 
 ## 프로젝트 개요
